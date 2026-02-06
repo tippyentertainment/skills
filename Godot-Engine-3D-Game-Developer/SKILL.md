@@ -1,3 +1,8 @@
+---
+name: 3D Godot Engine - Game Developer
+description: Skills and agent workflows for 3D game development with Godot Engine.
+---
+
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
 
