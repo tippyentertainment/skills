@@ -1,8 +1,11 @@
-# 3D Game Developer – Agent Skills
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
+
+# 3D Godot Engine - Game Developer – Agent Skills
 
 These skills define what the Taskingbot agent can do for 3D game development.
 Each skill should be implemented as an internal tasking.tech API or workflow.
-The model only sees these skills as tools with JSON parameters.
+The model only sees these skills as tools with JSON parameters.[web:69]
 
 ---
 
@@ -11,9 +14,60 @@ The model only sees these skills as tools with JSON parameters.
 - **Project** – A game project (e.g., `Project Aurora`).
 - **Area** – High‑level discipline: `gameplay`, `level`, `art`, `tech`, `audio`, `ui`, `tools`.
 - **Build** – A compiled game binary for a specific platform (PC, Web, Console, etc.).
-- **Worker** – Build/test machines (local or CI) that pull jobs from tasking.tech.
+- **Worker** – Build/test machines (local or CI) that pull jobs from tasking.tech.[web:69]
 
-The agent never accesses machines directly. It calls skills → backend enqueues jobs → workers execute and report back.
+The agent never accesses machines directly. It calls skills → backend enqueues jobs → workers execute and report back.[web:69]
+
+---
+
+## 0.1 File Types & Formats (Authoritative)
+
+The agent should talk about files using explicit extensions and typical paths.
+It never reads files directly; it references them by repo path or storage id.[web:135]
+
+### Scripts
+
+- `.gd`          – GDScript files (gameplay logic, tools, tests).
+- `.cs`          – C# scripts.
+- `.tscn`        – Text scene files (levels, prefabs, UI).
+- `.escn`        – Text scenes exported from DCC tools or intermediate pipelines.[web:124]
+
+### 3D / Geometry
+
+- `.blend`       – Blender source scenes and models.
+- `.fbx`         – Rigged/animated meshes from DCC tools.
+- `.gltf` / `.glb` – Preferred interchange for static and animated assets.[web:131]
+- `.obj`         – Legacy static meshes.
+
+### Textures & Materials
+
+- `.png`, `.jpg` – General textures (albedo, masks, UI).
+- `.tga`, `.tif` – High‑quality or linear textures.
+- Common naming patterns the agent should respect:
+  - `_albedo`, `_basecolor`, `_normal`, `_roughness`, `_metallic`, `_ao`.
+
+### Audio
+
+- `.wav`         – Source and high‑quality SFX/VO.
+- `.ogg`, `.mp3` – Compressed in‑game audio and music.
+
+### Shaders
+
+- `.shader`      – Godot shader files.
+- `.gdshader`    – Godot visual shader files (text representation).[web:124]
+
+### Data & Config
+
+- `.json`, `.yml`, `.yaml` – Game data, build configs, pipelines.
+- `.cfg`, `.ini`           – Engine or tool configuration.
+
+Guidelines for the agent:
+
+- Mention specific extensions in tasks (e.g. “refactor `player_controller.gd`”,
+  “convert all `.fbx` in `art/characters/` to `.glb`”).
+- Keep existing naming conventions and folder layouts when proposing changes.
+- Use `source_extension`, `target_extension`, explicit file names and `source_path`
+  in skill parameters when relevant.
 
 ---
 
@@ -95,7 +149,7 @@ Create a sprint backlog for a fixed period.
 
 ## 2. Builds & Exports
 
-Assumes Godot 4.6 build workers using headless CLI (`godot --headless --export-release ...`).[web:125][web:126][web:133]
+Assumes engine build workers using headless/CLI export (e.g., Godot 4.x `--headless --export-release`).[web:125][web:126][web:133]
 
 ### `run_game_build`
 
@@ -107,7 +161,7 @@ Trigger a game build on a worker.
 - `branch` (string, required).
 - `platform` (string, required) – e.g. `windows`, `linux`, `mac`, `web`, `console_devkit`.
 - `build_type` (string, required) – `debug` or `release`.
-- `build_preset` (string, optional) – Godot export preset name or CI preset id.
+- `build_preset` (string, optional) – Engine export preset name or CI preset id.
 - `notes` (string, optional) – Context for changelog.
 
 **Behavior**
@@ -131,7 +185,7 @@ Query build status and logs.
   - `status`: `queued`, `running`, `failed`, `succeeded`.
   - `summary`: short text.
   - `log_excerpt`: last N lines.
-  - `artifacts`: list of artifact ids/URLs (installer, zip, PDBs, etc.).
+  - `artifacts`: list of artifact ids/URLs (installer, zip, symbols, etc.).
 
 ---
 
@@ -156,7 +210,7 @@ Mark a build as ready for playtest and distribute.
 
 ### `run_game_tests`
 
-Run automated tests (unit/integration/e2e) through headless Godot or separate harness.[web:130][web:138]
+Run automated tests (unit/integration/e2e) through headless engine or separate harness.[web:130][web:138]
 
 **Parameters**
 
@@ -185,7 +239,7 @@ Get results of a test run.
 - Returns:
   - `status`: `queued`, `running`, `failed`, `passed`, `partial`.
   - `summary`: passes/fails, key metrics.
-  - `report_ids`: links to detailed reports (JUnit, HTML).
+  - `report_ids`: links to detailed reports (JUnit, HTML, etc.).
   - `log_excerpt`: short snippet of failing tests or stack traces.
 
 ---
@@ -221,16 +275,36 @@ Register/import a 3D asset into the game pipeline.
 
 - `project_id` (string, required).
 - `asset_name` (string, required).
-- `source_id` (string, required) – Storage id / repo path.
+- `source_path` (string, required) – e.g. `art/characters/hero/hero_v03.fbx`.
 - `category` (string, required) – `environment`, `character`, `prop`, `fx`, `vehicle`, `weapon`.
-- `poly_budget` (integer, optional).
-- `texture_budget` (integer, optional, approximate total resolution).
+- `source_extension` (string, required) – e.g. `fbx`, `gltf`, `glb`, `blend`, `obj`.
+- `target_extension` (string, optional) – e.g. `glb`, `tscn`.
 - `usage_notes` (string, optional).
 
 **Behavior**
 
-- Records asset metadata, may trigger import scripts.
+- Records asset metadata and desired conversion.
+- May trigger import/conversion scripts on workers.
 - Returns `asset_id`.
+
+---
+
+### `convert_asset_format`
+
+Batch‑convert assets between formats (e.g., FBX → GLTF).
+
+**Parameters**
+
+- `project_id` (string, required).
+- `input_extension` (string, required).
+- `output_extension` (string, required).
+- `path_pattern` (string, required) – Glob or repo path pattern (e.g., `art/characters/**/*.fbx`).
+- `options` (object, optional) – Tool‑specific flags (scale, axis, animation import, etc.).
+
+**Behavior**
+
+- Enqueues conversion jobs on workers.
+- Returns `conversion_job_id` and later status/summary.
 
 ---
 
@@ -324,7 +398,7 @@ Mirror a task into the Git hosting platform.
 
 **Behavior**
 
-- Creates an issue/ ticket with links back to tasking.tech and relevant build/test info.
+- Creates an issue/ticket with links back to tasking.tech and relevant build/test info.
 - Returns `issue_url` / `issue_id`.
 
 ---
@@ -411,13 +485,13 @@ When using these skills, the agent should:
    - For non‑trivial requests, outline a short plan, then call skills in sequence.
 
 2. **Automate aggressively**  
-   - Prefer skills over suggestions when possible (create tasks, trigger builds/tests, bake levels).
+   - Prefer skills over suggestions when possible (create tasks, trigger builds/tests, bake levels, convert assets).
 
 3. **Keep humans in the loop on risk**  
-   - Explain build/test failures in plain language and propose specific fixes.
+   - Explain build/test failures or asset issues in plain language and propose specific fixes.
 
 4. **Tie everything back to the project**  
-   - Always supply `project_id` and link tasks/builds/tests/specs where possible.
+   - Always supply `project_id` and link tasks/builds/tests/specs/assets where possible.
 
 5. **Use memory for big decisions**  
    - Call `save_game_memory` when important constraints, goals, or decisions are made so future conversations stay aligned.
