@@ -72,7 +72,7 @@ When this skill is active, follow this flow:
        are consistent.
    - Use `onlyBuiltDependencies` behavior from `pnpm-workspace.yaml`
      to avoid suggesting changes that require native builds not supported
-     in WebContainers. [web:216]
+     in WebContainers.
 
 6. **Dependency and peer warning handling**
    - When `pnpm` reports newer versions:
