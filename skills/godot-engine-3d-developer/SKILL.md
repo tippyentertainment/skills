@@ -1,5 +1,5 @@
 ---
-name: 3D Godot Engine - Game Developer
+name: godot-engine-3d-developer
 description: Skills and agent workflows for 3D game development with Godot Engine.
 ---
 
@@ -10,7 +10,7 @@ description: Skills and agent workflows for 3D game development with Godot Engin
 
 These skills define what the Taskingbot agent can do for 3D game development.
 Each skill should be implemented as an internal tasking.tech API or workflow.
-The model only sees these skills as tools with JSON parameters.[web:69]
+The model only sees these skills as tools with JSON parameters.
 
 ---
 
@@ -19,29 +19,29 @@ The model only sees these skills as tools with JSON parameters.[web:69]
 - **Project** – A game project (e.g., `Project Aurora`).
 - **Area** – High‑level discipline: `gameplay`, `level`, `art`, `tech`, `audio`, `ui`, `tools`.
 - **Build** – A compiled game binary for a specific platform (PC, Web, Console, etc.).
-- **Worker** – Build/test machines (local or CI) that pull jobs from tasking.tech.[web:69]
+- **Worker** – Build/test machines (local or CI) that pull jobs from tasking.tech.
 
-The agent never accesses machines directly. It calls skills → backend enqueues jobs → workers execute and report back.[web:69]
+The agent never accesses machines directly. It calls skills → backend enqueues jobs → workers execute and report back.
 
 ---
 
 ## 0.1 File Types & Formats (Authoritative)
 
 The agent should talk about files using explicit extensions and typical paths.
-It never reads files directly; it references them by repo path or storage id.[web:135]
+It never reads files directly; it references them by repo path or storage id.
 
 ### Scripts
 
 - `.gd`          – GDScript files (gameplay logic, tools, tests).
 - `.cs`          – C# scripts.
 - `.tscn`        – Text scene files (levels, prefabs, UI).
-- `.escn`        – Text scenes exported from DCC tools or intermediate pipelines.[web:124]
+- `.escn`        – Text scenes exported from DCC tools or intermediate pipelines.
 
 ### 3D / Geometry
 
 - `.blend`       – Blender source scenes and models.
 - `.fbx`         – Rigged/animated meshes from DCC tools.
-- `.gltf` / `.glb` – Preferred interchange for static and animated assets.[web:131]
+- `.gltf` / `.glb` – Preferred interchange for static and animated assets.
 - `.obj`         – Legacy static meshes.
 
 ### Textures & Materials
@@ -59,7 +59,7 @@ It never reads files directly; it references them by repo path or storage id.[we
 ### Shaders
 
 - `.shader`      – Godot shader files.
-- `.gdshader`    – Godot visual shader files (text representation).[web:124]
+- `.gdshader`    – Godot visual shader files (text representation).
 
 ### Data & Config
 
@@ -73,6 +73,19 @@ Guidelines for the agent:
 - Keep existing naming conventions and folder layouts when proposing changes.
 - Use `source_extension`, `target_extension`, explicit file names and `source_path`
   in skill parameters when relevant.
+
+## Files to create
+
+For Godot 3D skill pages and examples, include these files where relevant:
+
+- `SKILL.md` — must include YAML frontmatter with `name` and `description`
+- `README.md` — short skill overview (optional)
+- Scenes: `.tscn` (Text scene files)
+- Scripts: `.gd`, `.cs`
+- 3D assets: `.glb`/`.gltf`, `.fbx`, `.blend`
+- Textures: `.png`, `.jpg`, `.tga`
+- Shaders: `.shader`
+
 
 ---
 
@@ -154,7 +167,7 @@ Create a sprint backlog for a fixed period.
 
 ## 2. Builds & Exports
 
-Assumes engine build workers using headless/CLI export (e.g., Godot 4.x `--headless --export-release`).[web:125][web:126][web:133]
+Assumes engine build workers using headless/CLI export (e.g., Godot 4.x `--headless --export-release`).
 
 ### `run_game_build`
 
@@ -215,7 +228,7 @@ Mark a build as ready for playtest and distribute.
 
 ### `run_game_tests`
 
-Run automated tests (unit/integration/e2e) through headless engine or separate harness.[web:130][web:138]
+Run automated tests (unit/integration/e2e) through headless engine or separate harness.
 
 **Parameters**
 

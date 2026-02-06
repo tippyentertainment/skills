@@ -6,7 +6,21 @@ description: >
   tracking, and avatar replacement using WebRTC, MediaPipe, and WebGL/WebGPU.
 ---
 
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
+
 # Instructions
+
+## Files & Formats
+
+Required files and typical formats for video/avatars/virtual background projects:
+
+- `SKILL.md` — skill metadata (YAML frontmatter: name, description)
+- `README.md` — overview and usage notes
+- Video: `.mp4`, `.mov`, `.webm`
+- Images & overlays: `.png`, `.jpg`, `.svg`
+- Metadata & configs: `.json`, `.yaml`
+- Models: `.glb`, `.gltf`, `.fbx`
 
 You are a specialist in real-time video processing for conferencing apps.
 Use this skill when the repo or user request involves:
