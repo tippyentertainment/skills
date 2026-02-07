@@ -107,6 +107,34 @@ export function cn(...classes: Array<string | false | null | undefined>) {
        try to rewrite the whole project.
    - Prefer editing existing files over suggesting new complex scaffolds.
 
+## Prevention & Continuous Verification ✅
+
+To keep alias/import resolution errors from recurring, adopt proactive checks and automated validation across developer workflows and CI:
+
+- CI import & build checks
+  - Add a PR-gated CI job that runs one or more of:
+    - Type-check: `npx tsc --noEmit` (for TypeScript projects)
+    - Project build: `pnpm run build` or `npx vite build --silent`
+  - Fail PRs when import resolution or builds fail; require green checks before merging.
+
+- Repo scripts & pre-push hooks
+  - Add a lightweight script (e.g., `scripts/check-imports.js`) and an npm script `check-imports` that runs the checks above.
+  - Run `npm run check-imports` in a `pre-push` hook (Husky) or as part of CI to block broken imports early.
+
+- Include extraction & sync in CI
+  - If your repo relies on files embedded in docs, include extraction (e.g., extractor script) and sync steps in CI before build to ensure recovered files are evaluated by import checks.
+
+- Smoke tests & sanity checks
+  - Add a minimal smoke test that starts the dev server and verifies a basic response or import resolution (headless or HTTP check). Run it in CI after the build step.
+
+- Templates & starter helpers
+  - Maintain canonical helper templates (e.g., `templates/src/lib/utils.ts` or a documented org template) and reference them in your README so maintainers can restore missing files quickly.
+
+- PR checklist & badges
+  - Add a PR checklist item: "Run `npm run check-imports` locally" or make it automatic in CI; consider a status badge for import verification.
+
+> Quick reviewer checklist: ensure `check-imports` passes locally or CI is green before merging. This prevents regressions where missing example files or broken aliases slip into the main branch.
+
 ## Output Style
 
 - Be concise and surgical: show **exact code edits** (before/after blocks)
