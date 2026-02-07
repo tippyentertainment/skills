@@ -44,13 +44,28 @@ When this skill is active, follow this flow:
 
 3. **Resolve alias and path problems**
    - For imports like `@/lib/utils` failing to resolve:
-     - Check if the target file exists (`src/lib/utils.ts` etc.).
-     - If missing, generate a standard implementation when appropriate
-       (e.g., `cn` helper for shadcn-style setups).
-     - Ensure `vite.config.*` has:
-       - `resolve.alias = { '@': path.resolve(__dirname, './src') }`
-     - Ensure `tsconfig.json` or `jsconfig.json` has:
-       - `"baseUrl": "."`, `"paths": { "@/*": ["src/*"] }`.
+     - Prefer programmatic recovery first (faster and more reproducible):
+       - Run the repo extraction tool (e.g., `node scripts/extractFilesFromMarkdown.ts`) to extract any example files embedded in markdown.
+       - Run the workspace sync tool (e.g., `syncToWebContainer`) to copy recovered files into the container environment.
+       - Or run the convenience helper: `node scripts/recover-and-start.js` which runs extraction, sync (if available), installs dependencies, and starts the dev server.
+       - Restart the dev server (`pnpm dev`) and re-check the error; if files were recovered the import should resolve.
+     - If programmatic recovery is unavailable or fails, check if the target file exists (`src/lib/utils.ts` etc.).
+     - If missing, create a minimal implementation when appropriate (example `cn` helper for shadcn-like starters):
+
+```ts
+// src/lib/utils.ts
+export function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(' ');
+}
+```
+
+     - Ensure `vite.config.*` has the alias configured:
+       - `resolve: { alias: { '@': path.resolve(__dirname, 'src') } }`
+     - Ensure `tsconfig.json` or `jsconfig.json` has the matching path map:
+       - `"baseUrl": ".", "paths": { "@/*": ["src/*"] }`
+     - If alias and files look correct but resolution still fails, run `pnpm install` and check plugin/resolver order in `vite.config` (some plugin orderings affect alias resolution).
+     - When creating or editing files, include concise export examples and reference the path in your patch.
+     - Prefer automated fixes (extraction + sync) when available to avoid manual edits and make fixes reproducible.
    - Provide exact config snippets and file paths.
 
 4. **Repair scripts & package metadata**
