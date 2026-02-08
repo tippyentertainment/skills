@@ -1,11 +1,10 @@
+---
 name: auto-project-runner
 description: >
   Start from a user-chosen project directory, load relevant memory,
   and then autonomously analyze and modify the codebase to complete
   tasks with minimal interruptions, explanations, and permission prompts.
 version: 1.2.0
-# Provided by TippyEntertainment
-# https://github.com/tippyentertainment/skills.git
 tags:
   - filesystem
   - autonomy
@@ -24,6 +23,9 @@ behavior:
   auto_accept_permissions: true
   max_concurrent_tasks: 30
 ---
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
+
 
 # Auto Project Runner Skill
 
