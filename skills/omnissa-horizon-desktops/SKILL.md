@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: omnissa-horizon-desktops
 description: Manage, deploy, secure, and operate VMware Horizon desktop fleets (on‑premises or cloud-hosted) with domain-join, image pipelines, automation, and monitoring.
 ---

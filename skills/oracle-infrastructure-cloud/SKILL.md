@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: oracle-infrastructure-cloud
 description: Manage, deploy, and operate infrastructure on Oracle Cloud Infrastructure (OCI): compute, networking, storage, identity, automation, and cost governance.
 ---

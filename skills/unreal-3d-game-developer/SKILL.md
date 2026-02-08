@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: unreal-3d-game-developer
 description: >
   Help architect, implement, and optimize 3D games and simulations in Unreal

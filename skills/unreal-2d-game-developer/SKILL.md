@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: unreal-2d-game-developer
 description: >
   Help build and debug 2D and 2.5D experiences in Unreal Engine using

@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: azure-virtual-desktop-manager
 description: >
   Design, deploy, manage, and automate Azure Virtual Desktop (AVD)

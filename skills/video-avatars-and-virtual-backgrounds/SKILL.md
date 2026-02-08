@@ -1,5 +1,4 @@
 ---
-created_by: tippyentertainment blob
 name: video-avatars-and-virtual-backgrounds
 description: >
   Build and debug real-time video effects for conferencing and streaming:
