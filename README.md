@@ -10,3 +10,16 @@ Each skill folder should include a `SKILL.md` containing YAML frontmatter with `
 
 - `godot-engine-3D-game-developer.md` — Notes and roadmap for 3D Godot development.
 
+---
+
+## Includes & auto-injection
+
+You can inline small auxiliary docs (checklists, runbooks) into a `SKILL.md` using an include placeholder. Use the exact syntax:
+
+`<!-- include:relative/path/to/file.md -->`
+
+- Run locally: `node scripts/include-md.js` — this replaces placeholders with the referenced file content (wrapped with BEGIN/END markers). Review and commit the generated changes before opening a PR.
+- CI enforcement: `.github/workflows/include-md.yml` runs the same script on push/PR and fails if injected includes are out of date, prompting contributors to run the script and commit changes.
+
+This keeps `SKILL.md` files readable while making it easy to maintain small supporting docs separately.
+
