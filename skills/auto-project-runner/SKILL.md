@@ -4,8 +4,8 @@ description: >
   and then autonomously analyze and modify the codebase to complete
   tasks with minimal interruptions, explanations, and permission prompts.
 version: 1.2.0
-author: You
-created_by: tippyentertainment
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
 tags:
   - filesystem
   - autonomy

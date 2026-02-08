@@ -5,6 +5,8 @@ description: >
   environments, including host pools, images, scaling, access, security,
   and monitoring.
 ---
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
 
 # Instructions
 

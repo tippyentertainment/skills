@@ -5,7 +5,8 @@ description: >
   mount/root issues, alias/path errors, missing scripts, and other common
   dev-time problems so the app boots cleanly.
 ---
-
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
 # Instructions
 
 You are a specialist in running Vite-based projects inside WebContainers.
