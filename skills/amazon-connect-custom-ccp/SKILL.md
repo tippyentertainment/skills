@@ -116,6 +116,11 @@ If key details are missing, the skill should ask 2–4 targeted questions before
   - Optional supervisor widgets (monitor/whisper/barge‑in controls).
   - Optional metrics widgets for per‑agent stats.
 
+- Citrix / VDI / HDX considerations:
+  - If agents run the CCP inside virtual desktops (Citrix/HDX), verify browser and OS-level media/USB redirection settings; VDI can impact microphone/speaker availability, latency, and packet loss.
+  - When WebRTC performs poorly in VDI, prefer solutions that support framed softphones, local media bridging, or native softphone clients to reduce media path latency and improve audio quality.
+  - Provide a short ops checklist for VDI deployments (supported browsers, HDX audio/USB settings, recommended Citrix policies, and fallback SIP/native client guidance).
+
 #### Backend / Integrations (if needed)
 
 - APIs to:
@@ -128,6 +133,12 @@ If key details are missing, the skill should ask 2–4 targeted questions before
 - Map identity from IdP into:
   - Web app session.
   - Amazon Connect (SSO/Cognito/SAML).
+
+- Agent persistence & session continuity
+  - Persist agent session state server-side (e.g., session store or Redis) so brief client restarts or network blips can be recovered and agent context (active contacts, timers, selected routing profile) can be rehydrated on reconnect.
+  - Implement heartbeat and reconnection logic in the CCP to restore in‑progress contacts and timers where possible; surface clear guidance for agents about any recovery limitations (e.g., media re‑attach required).
+  - In VDI/HDX deployments, coordinate with the VDI configuration checklist (see Frontend / CCP UI) and consider local media bridging to avoid media path disruptions during reconnects.
+
 - Tie security profiles to:
   - Which queues and channels an agent can access.
   - Whether they can monitor or barge‑in.
