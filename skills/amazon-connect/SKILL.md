@@ -37,3 +37,10 @@ Required files and typical formats for Amazon Connect projects:
 - Provide stepwise runbooks and minimal, copyable CloudFormation/Terraform/Lambda snippets.
 - Reference file names and configuration paths when suggesting edits.
 - Prefer small, testable changes that can be validated by quick playbacks or test calls.
+
+---
+
+## Related skills
+
+- `amazon-connect-custom-ccp` — Design and implementation scaffolding for a **custom Contact Control Panel (CCP)**, contact flows, routing profiles, security profiles, and campaign design. See `skills/amazon-connect-custom-ccp/SKILL.md` for detailed guidance and example scaffolding.
+
