@@ -27,9 +27,14 @@ Required files and typical formats for Amazon Connect projects:
 
 1. **Contact flow & routing** — Design IVR flows, queues, routing profiles, and agent experience.
 2. **Telephony & connectivity** — Configure phone numbers, PSTN settings, and CCP behavior.
+
+   - Citrix / VDI / HDX considerations: If agents run CCP inside virtual desktops (Citrix/HDX), verify browser and OS-level media/USB redirection settings and test WebRTC performance (latency and packet loss). Prefer solutions that support local media bridging, framed softphone, or native softphone clients when VDI causes audio/media issues, and provide an ops checklist for VDI deployments (supported browsers, HDX audio/USB policies, fallbacks).
+
 3. **Integrations** — Hook into Lambda/CRM/databases for context, authentication, and routing decisions.
 4. **Analytics & quality** — Enable Contact Lens, store call recordings, and build dashboards for KPIs.
 5. **Security & compliance** — Support PCI/PII controls, redaction, encryption, and least-privilege IAM policies.
+
+   - Agent persistence & session continuity: Persist agent session state server-side (session store/Redis) so brief client restarts or network blips can be recovered and agent context (active contacts, timers, routing profile) rehydrated on reconnect. Implement heartbeat and reconnection logic in the CCP to restore in-progress contacts where possible and surface clear guidance for agents; in VDI/HDX environments, coordinate with the VDI checklist and consider local media bridging to avoid media path disruptions during reconnects.
 6. **Scaling & availability** — Architect multi-region or high-availability patterns where needed.
 
 ## Output style
