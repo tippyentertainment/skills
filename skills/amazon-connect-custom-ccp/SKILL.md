@@ -120,7 +120,7 @@ If key details are missing, the skill should ask 2–4 targeted questions before
   - If agents run the CCP inside virtual desktops (Citrix/HDX), verify browser and OS-level media/USB redirection settings; VDI can impact microphone/speaker availability, latency, and packet loss.
   - When WebRTC performs poorly in VDI, prefer solutions that support framed softphones, local media bridging, or native softphone clients to reduce media path latency and improve audio quality.
   - Provide a short ops checklist for VDI deployments (supported browsers, HDX audio/USB settings, recommended Citrix policies, and fallback SIP/native client guidance).
-
+  - See `ccp-ops-checklist.md` in this skill folder for a short ops checklist and runbook for VDI/HDX settings and reconnection guidance.
 #### Backend / Integrations (if needed)
 
 - APIs to:
