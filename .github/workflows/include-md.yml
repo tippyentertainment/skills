@@ -1,0 +1,29 @@
+name: Inject includes into SKILL.md
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  include-md:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Run include script
+        run: node scripts/include-md.js
+      - name: Check for changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "SKILL.md includes are out of date. Run 'node scripts/include-md.js' locally and commit generated changes.";
+            git --no-pager status --porcelain
+            exit 1
+          else
+            echo "Includes up to date.";
+          fi
