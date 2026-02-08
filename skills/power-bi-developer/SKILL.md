@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: power-bi-developer
 description: Develop, model, and deploy Power BI reports and dashboards, manage datasets, gateways, and deployment pipelines for enterprise analytics.
 ---

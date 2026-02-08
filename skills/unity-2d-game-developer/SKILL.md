@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: unity-2d-game-developer
 description: >
   Help design, implement, debug, and optimize 2D games and tools in Unity

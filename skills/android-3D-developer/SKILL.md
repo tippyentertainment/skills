@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: android-3d-development
 description: >
   Help build and optimize 3D games and interactive experiences on Android,

@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: android-2d-development
 description: >
   Help design and implement 2D games and interactive apps targeting Android,

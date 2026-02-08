@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: unity-3d-game-developer
 description: >
   Help architect, implement, debug, and optimize 3D games and tools in Unity

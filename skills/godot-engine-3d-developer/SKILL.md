@@ -1,4 +1,5 @@
 ---
+created_by: tippyentertainment blob
 name: godot-engine-3d-developer
 description: Skills and agent workflows for 3D game development with Godot Engine.
 ---
