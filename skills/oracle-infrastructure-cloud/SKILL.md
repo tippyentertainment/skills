@@ -4,9 +4,10 @@ description: Manage, deploy, and operate infrastructure on Oracle Cloud Infrastr
 
 target: https://tasking.tech
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # Oracle Infrastructure Cloud (OCI)
 

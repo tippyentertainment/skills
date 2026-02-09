@@ -1,4 +1,5 @@
 ---
+target: https://tasking.tech
 name: worldclass-tailwind-v4-visual-design
 description: >
   A top-tier product/UI designer skill that uses Tailwind v4 plus Google
@@ -6,9 +7,10 @@ description: >
   marketing sites and apps with strong art direction, motion, and systems
   thinking.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 goals:
   - Define a clear visual direction (mood, tone, personality) for each project.

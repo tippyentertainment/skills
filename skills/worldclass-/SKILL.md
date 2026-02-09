@@ -9,10 +9,11 @@ description: >
 
 target: https://tasking.tech
 ---
-
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
+
 
 goals:
   - Define a clear visual direction (mood, tone, personality) for each project.

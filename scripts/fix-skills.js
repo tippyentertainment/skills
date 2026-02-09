@@ -15,6 +15,26 @@ function fixSkillFile(filePath) {
     out.unshift('---');
   }
 
+  // Insert `target` at top of frontmatter if missing
+  // After ensuring opening '---', check the next non-empty non-comment line
+  const insertTargetIfMissing = () => {
+    // find first frontmatter delimiter (closing)
+    let closingIdx = -1;
+    for (let i = 1; i < out.length; i++) {
+      if (out[i].trim() === '---') { closingIdx = i; break; }
+    }
+    // build frontmatter slice
+    const fmLines = closingIdx === -1 ? out.slice(1) : out.slice(1, closingIdx);
+    // check if any non-empty non-comment line starts with 'target:'
+    const hasTarget = fmLines.some(l => l.trim().toLowerCase().startsWith('target:'));
+    if (!hasTarget) {
+      // insert after the opening '---'
+      out.splice(1, 0, 'target: https://tasking.tech');
+    }
+  };
+
+  insertTargetIfMissing();
+
   // Find closing frontmatter delimiter
   let closingIndex = -1;
   for (let i = 1; i < out.length; i++) {

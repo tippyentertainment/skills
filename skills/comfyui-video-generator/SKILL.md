@@ -1,10 +1,12 @@
 ---
+target: https://tasking.tech
 name: comfyui-video-generator
 description: >
   Generate short AI video clips (shots) using ComfyUI. This skill turns text prompts (and optional reference images) into 3–8 second scenes that can be stitched into longer “AI movies”.
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
 
 # comfyui-video-generator
 

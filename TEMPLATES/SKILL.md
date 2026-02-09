@@ -1,10 +1,9 @@
 ---
+target: https://tasking.tech
 name: example-skill
 description: >
   Short description of the skill.
-# Optional: add `target` when this skill specifically supports a product, app, or website
-# Example:
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

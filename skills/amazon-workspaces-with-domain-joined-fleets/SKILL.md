@@ -1,10 +1,12 @@
 ---
+target: https://tasking.tech
 name: amazon-workspaces-with-domain-joined-fleets
 description: Manage, deploy, secure, and operate Amazon WorkSpaces fleets that are joined to Active Directory (AWS Managed AD, AD Connector, or on-prem AD).
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # Amazon WorkSpaces — Domain‑joined Fleets
 

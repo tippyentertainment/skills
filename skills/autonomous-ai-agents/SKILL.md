@@ -12,6 +12,7 @@ target: https://tasking.tech
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
 
+
 goals:
   - Allow multiple agents to work concurrently on the same project or session.
   - Route user input (text/voice) to the right agent or group of agents.

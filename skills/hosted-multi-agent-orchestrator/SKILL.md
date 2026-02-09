@@ -1,4 +1,5 @@
 ---
+target: https://tasking.tech
 name: hosted-multi-agent-orchestrator
 description: >
   Coordinate multiple AI agents (host + workers) that can chat and generate
@@ -7,9 +8,10 @@ description: >
   endpoint choices per subtask. The experience is “podcast-like” (guided
   multi-voice collaboration), not an actual podcast.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 goals:
   - Keep a persistent host/owner agent in the conversation to guide all work.

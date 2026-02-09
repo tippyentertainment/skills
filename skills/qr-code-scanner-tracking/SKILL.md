@@ -1,11 +1,13 @@
 ---
+target: https://tasking.tech
 name: qr-code-scanner-tracking
 description: >
   Design, build, and refine a **QR code–based tracking system**. This skill helps generate QR codes, define what happens when they are scanned, and track scan events (who, where, when, how) for marketing, operations, product flows, or internal tools.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # qr-code-scanner-tracking
 

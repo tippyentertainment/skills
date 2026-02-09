@@ -4,9 +4,10 @@ description: Design, deploy, integrate, and operate Amazon Connect contact cente
 
 target: https://tasking.tech
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # Amazon Connect — Contact Center
 

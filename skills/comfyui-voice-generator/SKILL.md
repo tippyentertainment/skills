@@ -5,8 +5,10 @@ description: >
 
 target: https://tasking.tech
 ---
-# Provided by Tippyentertainment/skills.git
+# Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+# Provided by Tippyentertainment/skills.git
 
 # comfyui-voice-generator
 

@@ -1,11 +1,13 @@
 ---
+target: https://tasking.tech
 name: storyboard-video-orchestrator
 description: >
   Plan and orchestrate a full AI‑generated video (e.g., a 10‑minute short film or promo) by breaking it into **5–10 second scenes**, attaching script lines and audio requirements to each scene, and coordinating downstream skills (video, music, SFX, voice) to produce all assets needed for final assembly.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # storyboard-video-orchestrator
 

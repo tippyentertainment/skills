@@ -4,8 +4,6 @@ description: >
   Generates original anime story concepts, including worldbuilding, characters, power systems, and multi‑episode arcs, tailored to the user’s preferences (genre, tone, length, target audience).
 target: https://tasking.tech---
 
-# Provided by TippyEntertainment
-# https://github.com/tippyentertainment/skills.git
 
 # Anime Story Generator Skill
 
@@ -14,6 +12,9 @@ target: https://tasking.tech---
 Generates original anime story concepts, including worldbuilding, characters, power systems, and multi‑episode arcs, tailored to the user’s preferences (genre, tone, length, target audience).
 
 ---
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
+
 
 ## Intent
 

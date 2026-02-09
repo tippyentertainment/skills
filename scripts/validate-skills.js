@@ -51,10 +51,25 @@ function checkSkillFile(filePath) {
     errors.push('`created_by:` frontmatter field is not allowed.');
   }
 
-  // Optional: validate `target` field if present in frontmatter (must be http(s) URL)
-  const frontmatter = lines.slice(1, closingIndex).join('\n');
+  // `target` is required and must be the first frontmatter field; it must be an http(s) URL
+  const frontmatterLines = lines.slice(1, closingIndex);
+  const frontmatter = frontmatterLines.join('\n');
   const targetMatch = frontmatter.match(/^\s*target:\s*(.+)$/m);
-  if (targetMatch) {
+  if (!targetMatch) {
+    errors.push('Missing required `target` frontmatter (must be an http(s) URL and the top frontmatter key).');
+  } else {
+    // Ensure `target` is the first non-comment non-empty frontmatter line
+    let firstNonEmpty = null;
+    for (const l of frontmatterLines) {
+      const t = l.trim();
+      if (!t || t.startsWith('#')) continue;
+      firstNonEmpty = t;
+      break;
+    }
+    if (!firstNonEmpty || !/^target:\s*/i.test(firstNonEmpty)) {
+      errors.push('`target` must be the first frontmatter key (place it immediately after the opening `---`).');
+    }
+
     const targetValue = targetMatch[1].trim();
     try {
       const parsed = new URL(targetValue);

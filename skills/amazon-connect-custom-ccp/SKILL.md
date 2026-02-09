@@ -1,11 +1,13 @@
 ---
+target: https://tasking.tech
 name: amazon-connect-custom-ccp
 description: >
   Design, build, and refine a custom Contact Control Panel (CCP) and full Amazon Connect contact‑center configuration. This skill helps create tailored web‑based CCP UIs, integrate them with Amazon Connect Streams, and model security profiles, routing profiles, queues, campaigns, contact flows, IVR/bots, monitoring (barge‑in/whisper), and metrics so the overall experience matches business needs.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # amazon-connect-custom-ccp
 

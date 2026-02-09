@@ -1,4 +1,5 @@
 ---
+target: https://tasking.tech
 name: auto-project-runner
 description: >
   Start from a user-chosen project directory, load relevant memory,
@@ -25,6 +26,7 @@ behavior:
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
 
 
 
