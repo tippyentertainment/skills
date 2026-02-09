@@ -3,6 +3,8 @@ name: unreal-3d-game-developer
 description: >
   Help architect, implement, and optimize 3D games and simulations in Unreal
   Engine using C++, Blueprints, and modern UE5 workflows.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

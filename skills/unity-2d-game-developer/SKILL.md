@@ -3,6 +3,8 @@ name: unity-2d-game-developer
 description: >
   Help design, implement, debug, and optimize 2D games and tools in Unity
   using C#, the built-in 2D renderer, and common 2D workflows.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

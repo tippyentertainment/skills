@@ -51,6 +51,21 @@ function checkSkillFile(filePath) {
     errors.push('`created_by:` frontmatter field is not allowed.');
   }
 
+  // Optional: validate `target` field if present in frontmatter (must be http(s) URL)
+  const frontmatter = lines.slice(1, closingIndex).join('\n');
+  const targetMatch = frontmatter.match(/^\s*target:\s*(.+)$/m);
+  if (targetMatch) {
+    const targetValue = targetMatch[1].trim();
+    try {
+      const parsed = new URL(targetValue);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        errors.push('`target` must be an http or https URL.');
+      }
+    } catch (e) {
+      errors.push('`target` frontmatter must be a valid URL (e.g., https://tasking.tech).');
+    }
+  }
+
   return errors;
 }
 

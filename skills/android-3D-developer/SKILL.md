@@ -3,6 +3,8 @@ name: android-3d-development
 description: >
   Help build and optimize 3D games and interactive experiences on Android,
   using engines and frameworks such as Unity, Unreal, or OpenGL/ Vulkan.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

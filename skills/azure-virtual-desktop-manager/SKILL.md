@@ -4,6 +4,8 @@ description: >
   Design, deploy, manage, and automate Azure Virtual Desktop (AVD)
   environments, including host pools, images, scaling, access, security,
   and monitoring.
+
+target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

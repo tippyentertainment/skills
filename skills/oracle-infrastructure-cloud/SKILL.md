@@ -1,6 +1,8 @@
 ---
 name: oracle-infrastructure-cloud
 description: Manage, deploy, and operate infrastructure on Oracle Cloud Infrastructure (OCI): compute, networking, storage, identity, automation, and cost governance.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

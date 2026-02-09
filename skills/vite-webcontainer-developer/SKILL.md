@@ -4,6 +4,8 @@ description: >
   Debug and auto-fix Vite projects running inside WebContainers: resolve
   mount/root issues, alias/path errors, missing scripts, and other common
   dev-time problems so the app boots cleanly.
+
+target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

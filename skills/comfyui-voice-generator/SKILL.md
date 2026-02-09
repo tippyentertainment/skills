@@ -2,8 +2,10 @@
 name: comfyui-voice-generator
 description: >
   Generate AI voice‑overs and character lines using ComfyUI‑orchestrated TTS or voice models. This skill turns scripts and character briefs into audio files that can be synced with AI‑generated video scenes.
+
+target: https://tasking.tech
 ---
-# Provided by TippyEntertainment
+# Provided by Tippyentertainment/skills.git
 # https://github.com/tippyentertainment/skills.git
 
 # comfyui-voice-generator

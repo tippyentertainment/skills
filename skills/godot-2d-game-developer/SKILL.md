@@ -1,6 +1,8 @@
 ---
 name: godot-engine-2d-developer
 description: Skills and agent workflows for 2D game development with Godot Engine.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

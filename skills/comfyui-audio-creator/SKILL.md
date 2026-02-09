@@ -2,6 +2,8 @@
 name: comfyui-audio-creator
 description: >
   Generate **background music** and **ambience** that matches one or more video scenes produced by `comfyui-video-generator`. This skill does *not* handle spoken dialogue or narration; use `comfyui-voice-generator` for any voice work.
+
+target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

@@ -3,6 +3,8 @@ name: unity-3d-game-developer
 description: >
   Help architect, implement, debug, and optimize 3D games and tools in Unity
   using C#, modern render pipelines, and best-practice workflows.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

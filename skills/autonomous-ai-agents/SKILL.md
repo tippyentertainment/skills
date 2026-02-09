@@ -6,6 +6,8 @@ description: >
   but a coordinator manages turn-taking, merges, and reviews so parallel work stays
   fast, safe, and coherent. Agents communicate via AI chat, team chat, and collab
   chat channels to coordinate plans and changes.
+
+target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

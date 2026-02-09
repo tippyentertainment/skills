@@ -120,6 +120,7 @@ examples_of_tasks:
   - "Snap our spacing values to the project’s existing scale and remove random inline pixel values."
   - "Polish spacing across the app before launch while keeping the current brand and typography."
 
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

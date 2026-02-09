@@ -4,6 +4,8 @@ description: >
   Build and debug real-time video effects for conferencing and streaming:
   selfie segmentation virtual backgrounds, reverse segmentation, face mesh
   tracking, and avatar replacement using WebRTC, MediaPipe, and WebGL/WebGPU.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

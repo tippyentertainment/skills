@@ -1,6 +1,8 @@
 ---
 name: amazon-connect
 description: Design, deploy, integrate, and operate Amazon Connect contact center solutions, including contact flows, routing, telephony, integrations, analytics, and compliance.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

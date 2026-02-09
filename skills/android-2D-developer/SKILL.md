@@ -3,6 +3,8 @@ name: android-2d-development
 description: >
   Help design and implement 2D games and interactive apps targeting Android,
   using native (Kotlin/Java), game frameworks, or engines where applicable.
+
+target: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment

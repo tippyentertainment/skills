@@ -23,3 +23,8 @@ You can inline small auxiliary docs (checklists, runbooks) into a `SKILL.md` usi
 
 This keeps `SKILL.md` files readable while making it easy to maintain small supporting docs separately.
 
+Optional frontmatter: `target`
+
+- `target`: (optional) a URL indicating the primary product, app, or website the skill is targeted at, e.g. `target: https://tasking.tech`. Use this when a skill primarily supports a specific product or domain.
+
+

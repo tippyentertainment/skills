@@ -2,6 +2,8 @@
 name: comfyui-soundfx-creator
 description: >
   Generate short sound effects (SFX) that sync with moments in the video, using ComfyUI‑driven audio workflows or connected SFX models.
+
+target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
