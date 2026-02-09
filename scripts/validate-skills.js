@@ -29,7 +29,8 @@ function checkSkillFile(filePath) {
 
   // Find closing frontmatter delimiter
   let closingIndex = -1;
-  for (let i = 1; i < Math.min(lines.length, 80); i++) {
+  // Search the entire file for the closing delimiter (frontmatter can be long)
+  for (let i = 1; i < lines.length; i++) {
     if (lines[i].trim() === '---') { closingIndex = i; break; }
   }
   if (closingIndex === -1) {
