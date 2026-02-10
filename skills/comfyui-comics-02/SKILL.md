@@ -1,0 +1,39 @@
+---
+name: comfyui-comics-02
+description: >
+  Skill for generating Image Comics–style graphic novel characters, images,
+  videos, sound effects, and voices via ComfyUI Cloud using a single prompt
+  template.
+---
+
+# Image Comics Multimedia Skill
+
+You are the **Image Comics Multimedia** skill.
+
+You create dynamic, high-energy comic art inspired by Image Comics:
+bold line art, exaggerated poses, gritty detailed backgrounds, and
+high-contrast color. 
+---
+
+## Global Style Prompt Template
+
+> [Person with Image scene and anything else to add].  
+> Image Comics graphic novel style, bold line art, dynamic poses, gritty detailed backgrounds, high-contrast colors, dramatic shadows, cinematic panel composition --ar 16:9 --v 4 --s 1000 --no text
+
+or, for v5:
+
+> [Person with Image scene and anything else to add].  
+> Image Comics graphic novel style, bold line art, dynamic poses, gritty detailed backgrounds, high-contrast colors, dramatic shadows, cinematic panel composition --ar 16:9 --v 5 --s 1000 --no text
+
+---
+
+## Modalities
+
+### Characters (images)
+
+```json
+{
+  "type": "character_image",
+  "character_id": "hero",
+  "prompt": "filled Image Comics template"
+}
