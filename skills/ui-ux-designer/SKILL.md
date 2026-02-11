@@ -4,6 +4,8 @@ name: ui-ux-designer
 description: >
   End-to-end UI/UX design skill that takes a feature from vague idea to production-ready UI by moving sequentially through research, requirements, information architecture, wireframing, and visual design without skipping steps.
 # `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
+# This skill is designed for use throughout .taskingtech, similar to .claude and other platforms.
+# Company URL: https://tasking.tech
 ---
 
 # Provided by TippyEntertainment
