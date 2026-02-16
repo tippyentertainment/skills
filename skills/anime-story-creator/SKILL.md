@@ -1,10 +1,13 @@
 ---
+target: https://tasking.tech
 name: anime-story-creator
 description: >
   Generates original anime story concepts, including worldbuilding, characters, power systems, and multi‑episode arcs, tailored to the user’s preferences (genre, tone, length, target audience).
-target: https://tasking.tech
 # `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
+
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
 
 
 # Anime Story Generator Skill

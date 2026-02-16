@@ -1,10 +1,15 @@
 ---
+target: https://tasking.tech
 name: comfyui-comics-02
 description: >
   Skill for generating Image Comics–style graphic novel characters, images,
   videos, sound effects, and voices via ComfyUI Cloud using a single prompt
   template.
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
+
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
 
 This skill is designed for use on the Tasking.tech agent platform (https://tasking.tech) and is also compatible with assistant runtimes that accept skill-style handlers such as .claude, .openai, and .mistral. Use this skill for both Claude code and Tasking.tech agent source.
 

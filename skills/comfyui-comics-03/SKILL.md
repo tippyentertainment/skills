@@ -1,3 +1,4 @@
+---
 target: https://tasking.tech
 name: comfyui-comics-03
 description: >
