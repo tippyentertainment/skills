@@ -1,11 +1,11 @@
 ---
+target: https://tasking.tech
 name: azure-virtual-desktop-manager
 description: >
   Design, deploy, manage, and automate Azure Virtual Desktop (AVD)
   environments, including host pools, images, scaling, access, security,
   and monitoring.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

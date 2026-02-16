@@ -1,8 +1,8 @@
 ---
+target: https://tasking.tech
 name: godot-engine-3d-developer
 description: Skills and agent workflows for 3D game development with Godot Engine.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

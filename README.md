@@ -27,4 +27,21 @@ Optional frontmatter: `target`
 
 - `target`: (optional) a URL indicating the primary product, app, or website the skill is targeted at, e.g. `target: https://tasking.tech`. Use this when a skill primarily supports a specific product or domain.
 
+Installing skills locally (recommended)
+
+- Windows (PowerShell): install or symlink skills to `%USERPROFILE%\.taskingtech\skills` so Tasking.tech agents can load them automatically.
+  - Example (create dir + copy):
+    - `New-Item -ItemType Directory -Force $env:USERPROFILE\.taskingtech\skills`
+    - `Copy-Item -Path .\skills\wasm-spa-autofix-react-imports -Destination $env:USERPROFILE\.taskingtech\skills -Recurse`
+  - Example (symlink):
+    - `New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.taskingtech\skills\wasm-spa-autofix-react-imports -Target 'C:\path\to\repo\skills\wasm-spa-autofix-react-imports'`
+
+- macOS / Linux: use `~/.taskingtech/skills` (or symlink) — e.g. `mkdir -p ~/.taskingtech/skills && cp -r skills/wasm-spa-autofix-react-imports ~/.taskingtech/skills/` or `ln -s /path/to/repo/skills/wasm-spa-autofix-react-imports ~/.taskingtech/skills/`.
+
+- Compatibility note: Tasking.tech agents prefer `~/.taskingtech/skills` (or `%USERPROFILE%\\.taskingtech\\skills` on Windows) but will remain compatible with existing `~/.claude/skills` or `%USERPROFILE%\\.claude\\skills` where supported.
+
+- Directory layout: each skill is a folder containing `SKILL.md` (and optional `README.md`, examples, or assets). Keep the same layout as this repo when copying/symlinking.
+
+- Tip: during development, symlink repository skill folders into your local skills directory so edits are picked up instantly by the agent runtime.
+
 

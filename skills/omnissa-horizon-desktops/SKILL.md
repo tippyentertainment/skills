@@ -1,8 +1,8 @@
 ---
+target: https://tasking.tech
 name: omnissa-horizon-desktops
 description: Manage, deploy, secure, and operate VMware Horizon desktop fleets (on‑premises or cloud-hosted) with domain-join, image pipelines, automation, and monitoring.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

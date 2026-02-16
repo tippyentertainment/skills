@@ -1,9 +1,9 @@
 ---
+target: https://tasking.tech
 name: comfyui-voice-generator
 description: >
   Generate AI voice‑overs and character lines using ComfyUI‑orchestrated TTS or voice models. This skill turns scripts and character briefs into audio files that can be synced with AI‑generated video scenes.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

@@ -1,10 +1,10 @@
 ---
+target: https://tasking.tech
 name: android-2d-development
 description: >
   Help design and implement 2D games and interactive apps targeting Android,
   using native (Kotlin/Java), game frameworks, or engines where applicable.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

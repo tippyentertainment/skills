@@ -1,8 +1,8 @@
 ---
+target: https://tasking.tech
 name: power-bi-developer
 description: Develop, model, and deploy Power BI reports and dashboards, manage datasets, gateways, and deployment pipelines for enterprise analytics.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

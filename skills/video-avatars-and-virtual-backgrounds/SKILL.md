@@ -1,11 +1,11 @@
 ---
+target: https://tasking.tech
 name: video-avatars-and-virtual-backgrounds
 description: >
   Build and debug real-time video effects for conferencing and streaming:
   selfie segmentation virtual backgrounds, reverse segmentation, face mesh
   tracking, and avatar replacement using WebRTC, MediaPipe, and WebGL/WebGPU.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

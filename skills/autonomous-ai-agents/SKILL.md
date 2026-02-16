@@ -1,4 +1,5 @@
 ---
+target: https://tasking.tech
 name: autonomous-multi-ai-agents
 description: >
   Coordinate multiple AI agents that can chat, use voice, and edit code/files/folders
@@ -6,8 +7,7 @@ description: >
   but a coordinator manages turn-taking, merges, and reviews so parallel work stays
   fast, safe, and coherent. Agents communicate via AI chat, team chat, and collab
   chat channels to coordinate plans and changes.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

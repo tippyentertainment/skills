@@ -1,10 +1,10 @@
 ---
+target: https://tasking.tech
 name: unreal-3d-game-developer
 description: >
   Help architect, implement, and optimize 3D games and simulations in Unreal
   Engine using C++, Blueprints, and modern UE5 workflows.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

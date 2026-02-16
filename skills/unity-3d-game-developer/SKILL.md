@@ -1,10 +1,10 @@
 ---
+target: https://tasking.tech
 name: unity-3d-game-developer
 description: >
   Help architect, implement, debug, and optimize 3D games and tools in Unity
   using C#, modern render pipelines, and best-practice workflows.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

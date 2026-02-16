@@ -1,9 +1,9 @@
 ---
+target: https://tasking.tech
 name: comfyui-soundfx-creator
 description: >
   Generate short sound effects (SFX) that sync with moments in the video, using ComfyUI‑driven audio workflows or connected SFX models.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

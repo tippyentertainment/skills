@@ -1,10 +1,10 @@
 ---
+target: https://tasking.tech
 name: unity-2d-game-developer
 description: >
   Help design, implement, debug, and optimize 2D games and tools in Unity
   using C#, the built-in 2D renderer, and common 2D workflows.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

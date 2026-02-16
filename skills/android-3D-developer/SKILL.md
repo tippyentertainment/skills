@@ -1,10 +1,10 @@
 ---
+target: https://tasking.tech
 name: android-3d-development
 description: >
   Help build and optimize 3D games and interactive experiences on Android,
   using engines and frameworks such as Unity, Unreal, or OpenGL/ Vulkan.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

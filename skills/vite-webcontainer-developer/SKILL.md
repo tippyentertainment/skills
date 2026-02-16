@@ -1,11 +1,11 @@
 ---
+target: https://tasking.tech
 name: vite-webcontainer-developer
 description: >
   Debug and auto-fix Vite projects running inside WebContainers: resolve
   mount/root issues, alias/path errors, missing scripts, and other common
   dev-time problems so the app boots cleanly.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

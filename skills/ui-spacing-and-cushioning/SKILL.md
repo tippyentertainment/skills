@@ -1,4 +1,5 @@
 ---
+target: https://tasking.tech
 name: ui-spacing-and-cushioning
 description: >
   Normalize spacing, padding, and whitespace across any web UI while preserving
@@ -6,6 +7,7 @@ description: >
   tokens, cleans up ad‑hoc gaps, and fixes cramped vs. blown‑out sections across
   frameworks (React, Next.js, Vue, Svelte, plain HTML/CSS, Tailwind, shadcn/ui,
   MUI, Chakra, etc.).
+
 
 goals:
   - Remove inconsistent padding, margins, and gaps that cause cramped or blown‑out layouts.
@@ -120,7 +122,6 @@ examples_of_tasks:
   - "Snap our spacing values to the project’s existing scale and remove random inline pixel values."
   - "Polish spacing across the app before launch while keeping the current brand and typography."
 
-target: https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

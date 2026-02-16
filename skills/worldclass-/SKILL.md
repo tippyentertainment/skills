@@ -1,13 +1,12 @@
 ---
+target: https://tasking.tech
 name: worldclass-tailwind-v4-visual-design
 description: >
   A top-tier product/UI designer skill that uses Tailwind v4 plus Google
   Gemini Nano Banana image models to craft visually stunning, “award‑winning”
   marketing sites and apps with strong art direction, motion, and systems
   thinking.
-
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

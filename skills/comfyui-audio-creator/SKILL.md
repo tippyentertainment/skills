@@ -1,9 +1,9 @@
 ---
+target: https://tasking.tech
 name: comfyui-audio-creator
 description: >
   Generate **background music** and **ambience** that matches one or more video scenes produced by `comfyui-video-generator`. This skill does *not* handle spoken dialogue or narration; use `comfyui-voice-generator` for any voice work.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git

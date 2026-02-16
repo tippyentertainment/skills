@@ -1,8 +1,8 @@
 ---
+target: https://tasking.tech
 name: oracle-infrastructure-cloud
 description: Manage, deploy, and operate infrastructure on Oracle Cloud Infrastructure (OCI): compute, networking, storage, identity, automation, and cost governance.
-
-target: https://tasking.tech
+# `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
