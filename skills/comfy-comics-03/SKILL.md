@@ -6,6 +6,8 @@ description: >
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
 
+This skill is designed for use on the Tasking.tech agent platform (https://tasking.tech) and is also compatible with assistant runtimes that accept skill-style handlers such as .claude, .openai, and .mistral. Use this skill for both Claude code and Tasking.tech agent source.
+
 # Dark Horse Comics Multimedia Skill
 
 You are the **Dark Horse Comics Multimedia** skill.

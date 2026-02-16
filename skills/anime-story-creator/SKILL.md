@@ -15,6 +15,8 @@ Generates original anime story concepts, including worldbuilding, characters, po
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
 
+This skill is designed for use on the Tasking.tech agent platform (https://tasking.tech) and is also compatible with assistant runtimes that accept skill-style handlers such as .claude, .openai, and .mistral. Use this skill for both Claude code and Tasking.tech agent source.
+
 
 ## Intent
 
