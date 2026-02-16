@@ -24,10 +24,10 @@ builds and the preview runs reliably with React 19.
 
 React 19 specifics you MUST respect:
 - React 19 requires the modern JSX transform and `react/jsx-runtime`; classic
-  `React.createElement`-based transforms are legacy and should be migrated.[web:129][web:135][web:142]
+  `React.createElement`-based transforms are legacy and should be migrated.
 - Tooling should default to the automatic JSX runtime (`"jsx": "react-jsx"` /
-  `"react-jsxdev"`) instead of classic where possible.[web:129][web:136]
-- Vite + `@vitejs/plugin-react` is the recommended pairing for React 18/19.[web:118][web:134]
+  `"react-jsxdev"`) instead of classic where possible.
+- Vite + `@vitejs/plugin-react` is the recommended pairing for React 18/19.
 
 ## When to use this skill
 
@@ -37,7 +37,7 @@ The host should call you when any of the following is true:
   Vite-like config, and:
   - Dev server / preview fails with JSX runtime errors:
     - `"Cannot find module 'react/jsx-runtime'"`
-    - `"JSX asking that I should declare React at the top of the file"`.[web:129][web:141]
+    - "JSX asking that I should declare React at the top of the file"
   - There are issues with path aliases like `"@"` → `src` not working in the
     bundler or in TypeScript.
   - SPA routing with `react-router-dom` fails on refresh (404 instead of

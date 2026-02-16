@@ -26,7 +26,7 @@ start from this base template:
 
 > Retro anime style of the late 1990s  
 > and early-2000s, full  
-> body shot [GENDER and RACE] [PHYSICAL DESCRIPTION], retro anime screen still --ar 16:9 --v 7.0 [web:65][web:68]
+> body shot [GENDER and RACE] [PHYSICAL DESCRIPTION], retro anime screen still --ar 16:9 --v 7.0
 
 ### Filling the placeholders
 
@@ -47,7 +47,7 @@ start from this base template:
 Example prompts:
 
 - `Retro anime style of the late 1990s and early-2000s, full body shot young Japanese woman with short black hair, blue school uniform and messenger bag, retro anime screen still --ar 16:9 --v 7.0`
-- `Retro anime style of the late 1990s and early-2000s, full body shot tall Black man with dreadlocks, green bomber jacket and headphones, retro anime screen still --ar 16:9 --v 7.0` [web:65][web:79]
+- `Retro anime style of the late 1990s and early-2000s, full body shot tall Black man with dreadlocks, green bomber jacket and headphones, retro anime screen still --ar 16:9 --v 7.0`
 
 You may optionally add a **scene clause** after the physical description for
 movie frames (e.g., “standing on a rainy neon-lit city street at night”) while
@@ -67,7 +67,7 @@ coherent.
 - For **movie frames**, add a scene or action clause:
   - `..., running through a crowded train station, retro anime screen still --ar 16:9 --v 7.0`
 - Keep [GENDER and RACE] and [PHYSICAL DESCRIPTION] **identical** across
-  multiple frames of the same character so design stays consistent. [web:68][web:79]
+  multiple frames of the same character so design stays consistent.
 
 ### 2. Sound Effects
 
@@ -75,7 +75,7 @@ coherent.
 - Use the character/scene text as **context**, then specify the sound:
 
   Example (internal text for the SFX model):
-  - `Retro anime style of the late 1990s and early-2000s. Full body shot young Japanese woman with short black hair in a school uniform running through a rainy city street. Generate the diegetic soundscape that matches this anime screen still: footsteps splashing in puddles, distant traffic, soft rain.` [web:73][web:80]
+  - `Retro anime style of the late 1990s and early-2000s. Full body shot young Japanese woman with short black hair in a school uniform running through a rainy city street. Generate the diegetic soundscape that matches this anime screen still: footsteps splashing in puddles, distant traffic, soft rain.`
 
 - Ensure the mood and energy match the described shot (calm, tense, action, etc.).
 
@@ -89,7 +89,7 @@ coherent.
   - speaking style (e.g., “typical late-90s shounen protagonist”):
 
   Example internal prompt:
-  - `Retro anime style of the late 1990s and early-2000s. Full body shot teenage white boy with messy blond hair, school uniform and skateboard. Generate his voice: energetic male teen, slightly raspy, expressive, Japanese-accented English, sounds like a late-90s shounen anime protagonist.` [web:80]
+  - `Retro anime style of the late 1990s and early-2000s. Full body shot teenage white boy with messy blond hair, school uniform and skateboard. Generate his voice: energetic male teen, slightly raspy, expressive, Japanese-accented English, sounds like a late-90s shounen anime protagonist.`
 
 - Use the same description whenever this character speaks again.
 

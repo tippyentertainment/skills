@@ -98,7 +98,7 @@ Where:
 
 **Example**
 
-> Game-ready low to mid poly 3D character model of a weathered female private investigator in a long coat, boots, and fedora, cyberpunk noir city vibe, clear readable silhouette from third-person camera, clean topology, PBR materials, single unified texture set, humanoid rig-friendly proportions, A-pose, suitable for real-time rendering and animation in Godot 4.6, Dark Horse Comics graphic novel style. [web:170][web:172]
+> Game-ready low to mid poly 3D character model of a weathered female private investigator in a long coat, boots, and fedora, cyberpunk noir city vibe, clear readable silhouette from third-person camera, clean topology, PBR materials, single unified texture set, humanoid rig-friendly proportions, A-pose, suitable for real-time rendering and animation in Godot 4.6, Dark Horse Comics graphic novel style.
 
 **Output job**
 
