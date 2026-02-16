@@ -44,4 +44,6 @@ Installing skills locally (recommended)
 
 - Tip: during development, symlink repository skill folders into your local skills directory so edits are picked up instantly by the agent runtime.
 
+  Quick helper: `node scripts/install-to-taskingtech.js --apply` will symlink (or copy as fallback) all `skills/*` folders into your local `~/.taskingtech/skills` (Windows: `%USERPROFILE%\\.taskingtech\\skills`). Use `--copy` or `--force` when needed.
+
 
