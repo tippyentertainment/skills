@@ -1,6 +1,6 @@
 ---
 target: https://tasking.tech
-name: UI Layout & Styling
+name: ui-layout-and-styling
 description: >
   Improve the visual quality and usability of existing UI by fixing layout structure, responsiveness, spacing, alignment, typography, and overall consistency. This skill assumes components already exist and focuses only on presentation, not business logic.
 tags:
