@@ -52,8 +52,9 @@ A full-stack Timesheet app that:
 - Delivered real-time tracking with offline synchronization and background sync jobs.
 - Designed reusable components for time input, approval workflow, and reporting.
 
----
 # Provided by TippyEntertainment
+# name: timesheet-app-developer
+# description: The ability to design and develop a Timesheet Application that enables users (individuals or teams) to track work hours, manage time entries, monitor productivity, and generate reports for billing, payroll, or analytics purposes. This skill combines frontend user experience, backend data management, and system integration expertise.
 # https://github.com/tippyentertainment/skills.git
 
 
