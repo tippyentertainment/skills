@@ -1,4 +1,9 @@
+
+---
+name: timesheet-app-developer
+description: The ability to design and develop a Timesheet Application that enables users (individuals or teams) to track work hours, manage time entries, monitor productivity, and generate reports for billing, payroll, or analytics purposes. This skill combines frontend user experience, backend data management, and system integration expertise.
 target: https://tasking.tech
+---
 # SKILL: timesheet-app-developer
 
 ### Overview
