@@ -1,7 +1,5 @@
 ---
 
-# Provided by TippyEntertainment
-# https://github.com/tippyentertainment/skills.git
 
 target: https://tasking.tech
 name: tdz-debugger
@@ -14,6 +12,9 @@ tags:
    - vite
    - webpack
 ---
+# Provided by TippyEntertainment
+# https://github.com/tippyentertainment/skills.git
+
 ## Purpose
 
 This skill is for one specific class of problems:

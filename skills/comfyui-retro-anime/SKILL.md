@@ -5,9 +5,10 @@ description: >
   Multi-modal ComfyUI skill that generates retro late-1990s / early-2000s anime-style characters, movie frames, images, sounds, and voices using a single, consistent Midjourney-style prompt template.
 # `target` is required and should be the top frontmatter key. Use an http(s) URL, e.g. https://tasking.tech
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 This skill is designed for use on the Tasking.tech agent platform (https://tasking.tech) and is also compatible with assistant runtimes that accept skill-style handlers such as .claude, .openai, and .mistral. Use this skill for both Claude code and Tasking.tech agent source.
 

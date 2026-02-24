@@ -5,9 +5,10 @@ description: >
   Skill for generating gritty Mirage Comics–style graphic novel images, panels,
   and sequences via ComfyUI / image models using a consistent prompt template.
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 This skill is designed for use on the Tasking.tech agent platform (https://tasking.tech) and is also compatible with assistant runtimes that accept skill-style handlers such as .claude, .openai, and .mistral. Use this skill for both Claude code and Tasking.tech agent source.
 

@@ -8,9 +8,10 @@ description: >
 # Compatible platforms include .taskingtech, .claude, .openai, .mistral, and any other agent or automation ecosystem that supports skills in this format.
 # Company URL: https://tasking.tech
 ---
-
 # Provided by TippyEntertainment
 # https://github.com/tippyentertainment/skills.git
+
+
 
 # UI/UX Designer Skill
 
