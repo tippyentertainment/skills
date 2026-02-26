@@ -7,7 +7,10 @@ function fixSkillFile(filePath) {
   const lines = content.split(/\r?\n/);
 
   // Remove any created_by lines
-  const noCreated = lines.filter(l => !/^\s*created_by:/i.test(l));
+  let noCreated = lines.filter(l => !/^\s*created_by:/i.test(l));
+
+  // Remove all [web:*] references
+  noCreated = noCreated.map(l => l.replace(/\[web:[^\]]*\]/g, ''));
 
   // Ensure frontmatter opening
   let out = noCreated.slice();
