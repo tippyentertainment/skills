@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/score", "dest": "/api/score" },
+    { "src": "/api/health", "dest": "/api/health" },
+    { "src": "/api/score/batch", "dest": "/api/score/batch" }
+  ]
+}
