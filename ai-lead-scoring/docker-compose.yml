@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  lead-scoring-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - CRM_TYPE=${CRM_TYPE:-salesforce}
+      - SALESFORCE_CLIENT_ID=${SALESFORCE_CLIENT_ID}
+      - HUBSPOT_API_KEY=${HUBSPOT_API_KEY}
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
