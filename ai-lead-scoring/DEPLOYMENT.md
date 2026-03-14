@@ -1,92 +1,67 @@
-# AI Lead Scoring System - Deployment Guide
+# AI Lead Scoring Deployment Guide
 
-## Quick Start
+## Environment Variables
 
 ```bash
-# Clone the repository
-git clone https://github.com/tippyentertainment/skills.git
-cd skills/ai-lead-scoring
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set environment variables
-export CRM_TYPE=salesforce
-export SALESFORCE_CLIENT_ID=your_client_id
-export SALESFORCE_CLIENT_SECRET=your_client_secret
-export SALESFORCE_INSTANCE_URL=https://your-instance.my.salesforce.com
-
-# Train model (requires historical lead data)
-python model_training.py
-
-# Start API server
-python scoring_api.py
+CRM_API_KEY=your_hubspot_or_salesforce_api_key
+CRM_INSTANCE_URL=https://api.hubapi.com
+WEBHOOK_SECRET=your_webhook_authentication_secret
 ```
 
-## API Endpoints
+## Deployment Options
 
-### POST /score
-Score a single lead:
-```json
-{
-  "pages_per_session": 4.5,
-  "blog_reads": 3,
-  "video_views": 2,
-  "downloads": 1,
-  "email_opens": 5,
-  "email_clicks": 2,
-  "email_replies": 1,
-  "demo_requested": 1,
-  "employee_count": 150,
-  "revenue_tier": 4,
-  "industry": "Technology",
-  "title": "VP of Engineering",
-  "country": "United States",
-  "state": "CA",
-  "hiring_velocity": 12,
-  "funding_amount": 5000000
-}
+### AWS Lambda
+```bash
+serverless deploy --stage production
 ```
 
-Response:
-```json
-{
-  "score": 87.5,
-  "confidence": 0.75,
-  "category": "HOT",
-  "top_drivers": [
-    {"feature": "demo_score", "importance": 0.25},
-    {"feature": "title_score", "importance": 0.18},
-    {"feature": "industry_icp_score", "importance": 0.15}
-  ],
-  "latency_ms": 12.5
-}
+### Google Cloud Functions
+```bash
+gcloud functions deploy lead-scorer \
+  --runtime nodejs18 \
+  --trigger-http \
+  --set-env-vars CRM_API_KEY=xxx,CRM_INSTANCE_URL=xxx
 ```
 
-## Expected Results
+### Vercel
+```bash
+vercel --prod
+```
 
-| Metric | Improvement |
-|--------|-------------|
-| Pipeline Velocity | 3.4x |
-| Conversion Rate (hot leads) | 2-3x |
-| Sales Efficiency | 50% less time on cold leads |
-| Response Time (hot leads) | 60% faster |
-
-## CRM Integration
-
-### Salesforce
-Set `CRM_TYPE=salesforce` and configure OAuth credentials.
+## CRM Setup
 
 ### HubSpot
-Set `CRM_TYPE=hubspot` and `HUBSPOT_API_KEY`.
+1. Create custom properties:
+   - `lead_score` (number)
+   - `lead_classification` (string: HOT/WARM/COOL/COLD)
+   - `last_scored` (datetime)
 
-### Pipedrive
-Set `CRM_TYPE=pipedrive` and `PIPEDRIVE_API_KEY`.
+2. Configure webhook triggers:
+   - Contact creation
+   - Email events (open, click)
+   - Website page views
+   - Form submissions
 
-## Docker Deployment
+3. Create workflows by score tier:
+   - HOT: Assign to sales rep, send Slack alert
+   - WARM: Add to nurture sequence
+   - COOL: Marketing automation only
+   - COLD: Re-engagement campaign
 
-```bash
-docker-compose up -d
+## Monitoring
+
+### Weekly Metrics to Track
+- Scoring accuracy (conversion rate by tier)
+- Average score distribution
+- HOT lead response time
+- Decay rate impact
+
+### Adjusting Weights
+Based on conversion data, adjust weights:
+```typescript
+private weights = {
+  demographics: 0.30,  // Adjust based on ICP fit
+  behavior: 0.50,      // Adjust based on engagement correlation
+  engagement: 0.20     // Adjust based on intent signals
+};
 ```
-
-API will be available at http://localhost:8000
