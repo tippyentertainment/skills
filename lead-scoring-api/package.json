@@ -1,0 +1,15 @@
+{
+  "name": "lead-scoring-api",
+  "version": "1.0.0",
+  "description": "REST API for real-time lead scoring",
+  "main": "api/score.ts",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  },
+  "keywords": ["lead-scoring", "api", "rest", "vercel"],
+  "license": "MIT"
+}
