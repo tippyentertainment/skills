@@ -1,114 +1,95 @@
 import { useState } from 'react';
-import { ImagePanel } from './components/ImagePanel';
-import { VideoPanel } from './components/VideoPanel';
-import { AudioPanel } from './components/AudioPanel';
-import { VoicePanel } from './components/VoicePanel';
-import { ThreeDPanel } from './components/ThreeDPanel';
-import { Gallery } from './components/Gallery';
-import { History } from './components/History';
-import { GeneratedItem } from './types';
+import { LayoutDashboard, Image, Video, Music, Mic, Box, ImageIcon, History, Sparkles, Zap, ChevronRight } from 'lucide-react';
+import { TabType, GeneratedItem } from './types';
+import Dashboard from './components/Dashboard';
+import ImagePanel from './components/ImagePanel';
+import VideoPanel from './components/VideoPanel';
+import AudioPanel from './components/AudioPanel';
+import VoicePanel from './components/VoicePanel';
+import Model3DPanel from './components/Model3DPanel';
+import Gallery from './components/Gallery';
+import HistoryView from './components/HistoryView';
 
-type Tab = 'dashboard' | 'image' | 'video' | 'audio' | 'voice' | '3d' | 'gallery' | 'history';
+const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
+  { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
+  { id: 'image', label: 'Images', icon: <Image size={20} /> },
+  { id: 'video', label: 'Videos', icon: <Video size={20} /> },
+  { id: 'audio', label: 'Audio', icon: <Music size={20} /> },
+  { id: 'voice', label: 'Voice', icon: <Mic size={20} /> },
+  { id: '3d', label: '3D Models', icon: <Box size={20} /> },
+  { id: 'gallery', label: 'Gallery', icon: <ImageIcon size={20} /> },
+  { id: 'history', label: 'History', icon: <History size={20} /> },
+];
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState<Tab>('dashboard');
-  const [generatedItems, setGeneratedItems] = useState<GeneratedItem[]>([]);
+function App() {
+  const [activeTab, setActiveTab] = useState<TabType>('dashboard');
+  const [items, setItems] = useState<GeneratedItem[]>([]);
+  const [isGenerating, setIsGenerating] = useState(false);
 
-  const addToGallery = (item: GeneratedItem) => {
-    setGeneratedItems(prev => [{ ...item, id: Date.now().toString() }, ...prev]);
+  const handleAddItem = (item: GeneratedItem) => setItems(prev => [item, ...prev]);
+  const handleDeleteItem = (id: string) => setItems(prev => prev.filter(item => item.id !== id));
+  const handleDownload = async (url: string, filename: string) => {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(blobUrl);
   };
 
-  const navItems = [
-    { id: 'dashboard' as Tab, label: 'Dashboard', icon: '🏠' },
-    { id: 'image' as Tab, label: 'Images', icon: '🖼️' },
-    { id: 'video' as Tab, label: 'Videos', icon: '🎬' },
-    { id: 'audio' as Tab, label: 'Audio', icon: '🎵' },
-    { id: 'voice' as Tab, label: 'Voice', icon: '🎙️' },
-    { id: '3d' as Tab, label: '3D Models', icon: '🎲' },
-    { id: 'gallery' as Tab, label: 'Gallery', icon: '🖼️' },
-    { id: 'history' as Tab, label: 'History', icon: '📜' },
-  ];
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'dashboard': return <Dashboard items={items} onNavigate={setActiveTab} />;
+      case 'image': return <ImagePanel onGenerate={handleAddItem} isGenerating={isGenerating} setIsGenerating={setIsGenerating} />;
+      case 'video': return <VideoPanel onGenerate={handleAddItem} isGenerating={isGenerating} setIsGenerating={setIsGenerating} />;
+      case 'audio': return <AudioPanel onGenerate={handleAddItem} isGenerating={isGenerating} setIsGenerating={setIsGenerating} />;
+      case 'voice': return <VoicePanel onGenerate={handleAddItem} isGenerating={isGenerating} setIsGenerating={setIsGenerating} />;
+      case '3d': return <Model3DPanel onGenerate={handleAddItem} isGenerating={isGenerating} setIsGenerating={setIsGenerating} />;
+      case 'gallery': return <Gallery items={items} onDelete={handleDeleteItem} onDownload={handleDownload} />;
+      case 'history': return <HistoryView items={items} onDownload={handleDownload} />;
+      default: return <Dashboard items={items} onNavigate={setActiveTab} />;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white">
-      {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-gray-950/80 backdrop-blur-xl border-r border-gray-800 p-4">
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            AI Creative Studio
-          </h1>
-          <p className="text-gray-500 text-sm mt-1">Generate anything</p>
+    <div className="min-h-screen bg-[#0a0a0f] flex">
+      <aside className="w-64 border-r border-[#2a2a3a] bg-[#12121a] flex flex-col">
+        <div className="p-6 border-b border-[#2a2a3a]">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
+              <Sparkles size={20} className="text-white" />
+            </div>
+            <div>
+              <h1 className="font-semibold text-white">AI Studio</h1>
+              <p className="text-xs text-zinc-500">Creative Suite</p>
+            </div>
+          </div>
         </div>
-        
-        <nav className="space-y-2">
-          {navItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                activeTab === item.id
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
-                  : 'hover:bg-gray-800 text-gray-400 hover:text-white'
-              }`}
-            >
-              <span className="text-xl">{item.icon}</span>
-              <span className="font-medium">{item.label}</span>
+        <nav className="flex-1 p-4 space-y-1">
+          {tabs.map((tab) => (
+            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${activeTab === tab.id ? 'bg-gradient-to-r from-purple-500/20 to-cyan-500/20 text-white border border-purple-500/30' : 'text-zinc-400 hover:text-white hover:bg-white/5'}`}>
+              {tab.icon}
+              <span className="font-medium">{tab.label}</span>
+              {activeTab === tab.id && <ChevronRight size={16} className="ml-auto" />}
             </button>
           ))}
         </nav>
-
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="bg-gray-800/50 rounded-xl p-4">
-            <p className="text-xs text-gray-500">Generated Today</p>
-            <p className="text-2xl font-bold text-purple-400">{generatedItems.length}</p>
+        <div className="p-4 border-t border-[#2a2a3a]">
+          <div className="glass rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <Zap size={16} className="text-yellow-400" />
+              <span className="text-sm font-medium text-white">Credits</span>
+            </div>
+            <div className="text-2xl font-bold text-white">∞</div>
+            <p className="text-xs text-zinc-500">Unlimited generations</p>
           </div>
         </div>
       </aside>
-
-      {/* Main Content */}
-      <main className="ml-64 p-8">
-        {activeTab === 'dashboard' && (
-          <div className="space-y-8">
-            <div className="text-center py-12">
-              <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Welcome to AI Creative Studio
-              </h2>
-              <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-                Generate stunning images, videos, audio, voice, and 3D models with the power of AI
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: '🖼️', title: 'Image Generation', desc: 'Create stunning images from text prompts', tab: 'image' as Tab },
-                { icon: '🎬', title: 'Video Generation', desc: 'Generate videos with AI-powered creation', tab: 'video' as Tab },
-                { icon: '🎵', title: 'Audio Generation', desc: 'Create music and sound effects', tab: 'audio' as Tab },
-                { icon: '🎙️', title: 'Voice Generation', desc: 'Convert text to natural speech', tab: 'voice' as Tab },
-                { icon: '🎲', title: '3D Model Generation', desc: 'Create 3D models from descriptions', tab: '3d' as Tab },
-                { icon: '🖼️', title: 'Gallery', desc: 'View all your generated content', tab: 'gallery' as Tab },
-              ].map(card => (
-                <button
-                  key={card.tab}
-                  onClick={() => setActiveTab(card.tab)}
-                  className="bg-gray-800/50 hover:bg-gray-800 border border-gray-700 hover:border-purple-500 rounded-2xl p-6 text-left transition-all hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10"
-                >
-                  <div className="text-4xl mb-4">{card.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-                  <p className="text-gray-400">{card.desc}</p>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'image' && <ImagePanel onGenerate={addToGallery} />}
-        {activeTab === 'video' && <VideoPanel onGenerate={addToGallery} />}
-        {activeTab === 'audio' && <AudioPanel onGenerate={addToGallery} />}
-        {activeTab === 'voice' && <VoicePanel onGenerate={addToGallery} />}
-        {activeTab === '3d' && <ThreeDPanel onGenerate={addToGallery} />}
-        {activeTab === 'gallery' && <Gallery items={generatedItems} />}
-        {activeTab === 'history' && <History items={generatedItems} />}
-      </main>
+      <main className="flex-1 overflow-hidden"><div className="h-full overflow-y-auto scrollbar-thin">{renderContent()}</div></main>
     </div>
   );
 }
+
+export default App;
