@@ -3,6 +3,19 @@ export interface GeneratedItem {
   type: 'image' | 'video' | 'audio' | 'voice' | '3d';
   prompt: string;
   url: string;
-  timestamp: Date;
+  thumbnail?: string;
+  createdAt: Date;
   metadata?: Record<string, unknown>;
+}
+
+export type TabType = 'dashboard' | 'image' | 'video' | 'audio' | 'voice' | '3d' | 'gallery' | 'history';
+
+export interface GenerationParams {
+  prompt: string;
+  width?: number;
+  height?: number;
+  duration?: number;
+  voice?: string;
+  style?: string;
+  seed?: number;
 }
