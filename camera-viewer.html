@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Feed Viewer - Middle East</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; padding: 20px; }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .subtitle { color: #8892b0; font-size: 1rem; }
+        .camera-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 20px; max-width: 1400px; margin: 0 auto; }
+        .camera-card { background: rgba(255, 255, 255, 0.05); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .camera-header { padding: 15px 20px; background: rgba(0, 212, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: space-between; }
+        .camera-title { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .status-live { background: rgba(0, 255, 136, 0.2); color: #00ff88; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+        .camera-feed { width: 100%; height: 300px; background: #000; display: flex; align-items: center; justify-content: center; }
+        .placeholder { color: #8892b0; text-align: center; padding: 20px; }
+        .camera-footer { padding: 15px 20px; background: rgba(0, 0, 0, 0.2); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #8892b0; }
+        .btn { padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+        .btn-primary { background: linear-gradient(135deg, #00d4ff, #0099cc); color: #fff; }
+        .btn-secondary { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body>
+    <header><h1>🎥 Camera Feed Viewer</h1><p class="subtitle">Live streams from Middle East locations</p></header>
+    <div class="camera-grid">
+        <div class="camera-card"><div class="camera-header"><div class="camera-title"><span>🇮🇱</span> <span>Hula Valley, Israel</span></div><span class="status-live">● LIVE</span></div><div class="camera-feed"><div class="placeholder"><div style="font-size:3rem">📹</div><p>Camera feed loading...</p></div></div><div class="camera-footer"><span id="timestamp-hula">--:--:--</span><div><button class="btn btn-secondary" onclick="refreshFeed('hula')">🔄 Refresh</button> <button class="btn btn-primary" onclick="fullscreen('hula')">⛶ Fullscreen</button></div></div></div>
+        <div class="camera-card"><div class="camera-header"><div class="camera-title"><span>🇱🇧</span> <span>Beirut, Lebanon</span></div><span class="status-live">● LIVE</span></div><div class="camera-feed"><div class="placeholder"><div style="font-size:3rem">📹</div><p>Camera feed loading...</p></div></div><div class="camera-footer"><span id="timestamp-beirut">--:--:--</span><div><button class="btn btn-secondary" onclick="refreshFeed('beirut')">🔄 Refresh</button> <button class="btn btn-primary" onclick="fullscreen('beirut')">⛶ Fullscreen</button></div></div></div>
+        <div class="camera-card"><div class="camera-header"><div class="camera-title"><span>🇮🇱</span> <span>Tel Aviv, Israel</span></div><span class="status-live">● LIVE</span></div><div class="camera-feed"><div class="placeholder"><div style="font-size:3rem">📹</div><p>Camera feed loading...</p></div></div><div class="camera-footer"><span id="timestamp-telaviv">--:--:--</span><div><button class="btn btn-secondary" onclick="refreshFeed('telaviv')">🔄 Refresh</button> <button class="btn btn-primary" onclick="fullscreen('telaviv')">⛶ Fullscreen</button></div></div></div>
+        <div class="camera-card"><div class="camera-header"><div class="camera-title"><span>🇦🇪</span> <span>Dubai, UAE</span></div><span class="status-live">● LIVE</span></div><div class="camera-feed"><div class="placeholder"><div style="font-size:3rem">📹</div><p>Camera feed loading...</p></div></div><div class="camera-footer"><span id="timestamp-dubai">--:--:--</span><div><button class="btn btn-secondary" onclick="refreshFeed('dubai')">🔄 Refresh</button> <button class="btn btn-primary" onclick="fullscreen('dubai')">⛶ Fullscreen</button></div></div></div>
+    </div>
+    <script>function updateTimestamps(){const now=new Date();const timeStr=now.toLocaleTimeString('en-US',{hour12:false});document.getElementById('timestamp-hula').textContent=timeStr+' (UTC+3)';document.getElementById('timestamp-beirut').textContent=timeStr+' (UTC+2)';document.getElementById('timestamp-telaviv').textContent=timeStr+' (UTC+2)';document.getElementById('timestamp-dubai').textContent=timeStr+' (UTC+4)';}updateTimestamps();setInterval(updateTimestamps,1000);</script>
+</body>
+</html>
