@@ -4,39 +4,60 @@ A modern web-based creative studio for generating AI content: images, videos, au
 
 ## Features
 
-- 🖼️ **Image Generation**: Text-to-image with customizable dimensions
-- 🎬 **Video Generation**: Text-to-video creation
-- 🎵 **Audio Generation**: Music and sound effects from text prompts
-- 🎙️ **Voice Generation**: Text-to-speech with multiple voices and speeds
-- 🎲 **3D Model Generation**: Text-to-3D model creation
-- 🖼️ **Gallery View**: Browse all generated content
-- 📜 **History Tracking**: View past generations with timestamps
+- **Dashboard** - Overview of all generated content with quick actions
+- **Image Generation** - Create stunning images from text descriptions
+- **Video Generation** - Generate AI-powered videos
+- **Audio Generation** - Produce music and sound effects
+- **Voice Generation** - Convert text to natural-sounding speech
+- **3D Model Generation** - Create 3D assets from descriptions
+- **Gallery** - View and manage all generated content
+- **History** - Track all generations with statistics
 
 ## Tech Stack
 
-- React 18 with TypeScript
-- Vite for fast development
-- Tailwind CSS v4 for styling
-- Modern dark theme UI
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Lucide React (icons)
 
 ## Getting Started
 
 ```bash
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-## API Endpoints
+## Project Structure
 
-The app expects these API endpoints:
-
-- `POST /api/generate-image` - Generate images
-- `POST /api/generate-video` - Generate videos
-- `POST /api/generate-sound` - Generate audio
-- `POST /api/generate-voice` - Generate voice
-- `POST /api/generate-3d` - Generate 3D models
-
-Each endpoint accepts JSON body with `prompt` parameter and returns `{ url: string }`.
+```
+ai-creative-studio/
+├── src/
+│   ├── components/
+│   │   ├── Dashboard.tsx
+│   │   ├── ImagePanel.tsx
+│   │   ├── VideoPanel.tsx
+│   │   ├── AudioPanel.tsx
+│   │   ├── VoicePanel.tsx
+│   │   ├── Model3DPanel.tsx
+│   │   ├── Gallery.tsx
+│   │   └── HistoryView.tsx
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── types.ts
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── vite.config.ts
+```
 
 ## License
 
